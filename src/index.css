@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+.menu a.active {
+    background-color:darkgrey;
+    color: rgb(19, 18, 18);
+    font-weight: 500;
+}
