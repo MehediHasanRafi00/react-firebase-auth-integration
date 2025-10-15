@@ -5,14 +5,21 @@ import { AuthContext } from "../Context/Auth/AuthContext";
 // import { auth } from "../firebase/firebase.init";
 
 const Register = () => {
-  const {createUser} = use(AuthContext);
-  
+  const { createUser } = use(AuthContext);
+
   const handleRegister = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    createUser(email,password)
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        // e.target.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   // const handleRegister = (e) => {
